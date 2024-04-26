@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script
+      src="https://kit.fontawesome.com/4631941e8a.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      Q1. What is box model?
+      <br />
+      Answer: A box that wraps around every single html element, includes
+      margin, border, padding, and content. By default width and height are for
+      the content, which is equivalent to content-box.
+      <br />
+      By setting box-sizing to border-box, it'll make the width and height fit
+      to include content, padding, and border. The two boxes below are example
+      of non-border box and border-box.
+      <br />
+      Usually we include box-sizing:border-box in the * category in CSS.
+    </div>
+    <div class="df--container">
+      <div class="container--default">default box.</div>
+      <div class="container--border-box">border-box.</div>
+    </div>
+    <div class="container container--Q2">
+      Q2. What is specificity?
+      <br />
+      Answer: Specificity is a weight given to a style to determine if it should
+      be applied or not. For example, if you give a div two different background
+      color in the CSS like below, it'll use the whichever comes last.
+      <br />
+      div {
+      <br />
+      background-color: black;
+      <br />
+      }
+      <br />
+      div {
+      <br />
+      background-color: red;
+      <br />
+      }
+      <br />
+      <br />
+      If you give div a background-color and the class of the div a
+      background-color, it'll use the class' background-color because it has a
+      higher specificity.
+      <br />
+      id > class > div/span/etc. If you add !important, then it'll take highest
+      priority, exmaple below.
+      <br />
+      div {
+      <br />
+      background-color: red !important
+      <br />
+      }
+    </div>
+    <div class="container container--Q3">
+      Q3. How to center a div?
+      <br />
+      Answer: First option is to use display: flex, justify-content: center, and
+      align-items: center.
+      <br />
+      The second option is to use position: relative and position: absolute,
+      then adjust the top, left, and transform to center the inner div.
+      <br />
+      top: 50%;
+      <br />
+      left: 50%;
+      <br />
+      transform: translate(-50%, -50%);
+      <br />
+      By using top and left, the top left point of the inner div will be at the
+      center of the outer div, then we transform: translate it to center the
+      center point of the inner div to the outer div.
+      <br />
+      A third option is to use display: flex in the outer div and use margin:
+      auto on the inner div.
+      <br />
+      display: grid and display: flex have some similarities, so remember to
+      also check that as an option as well.
+    </div>
+    <div class="df--container">
+      <div class="outer--df">
+        <div class="inner--df">df, jcc, aic</div>
+      </div>
+      <div class="outer--relative">
+        <div class="inner--absolute">relative and absolute</div>
+      </div>
+      <div class="outer--df">
+        <div class="inner--ma">df, margin: auto</div>
+      </div>
+    </div>
+    <div class="container container--Q4">
+      Q4. What is the difference between "div" and "section"? <br />
+      Answer: Divs are just used to group elements together, doesn't have a
+      specific meaning.
+      <br />
+      Sections are used to group together elements that are related to each
+      other, typically structured with headings then paragraph text etc.
+    </div>
+    <div class="container container--Q5">
+      Q5. What is the difference between block, inline, and inline-block?
+      <br />
+      Answer:
+      <br />
+      Display: block starts on a new line and takes up the whole width e.g. "p"
+      elements.
+      <br />
+      Display: inline starts on the same line and can't set the width and
+      height, e.g. "span" elements.
+      <br />
+      Display: inline-block starts on the same line but you're allowed to set
+      the width and height.
+    </div>
+    <div class="container--db">block 1</div>
+    <div class="container--db">block 2</div>
+    <div class="container--db">block 3</div>
+    <div class="df--container">
+      <span>inline 1</span>
+      <span>inline 2</span>
+      <span>inline 3</span>
+    </div>
+    <div class="df--container">
+      <div class="container--dib100">
+        inline-block 1 with 100px width and height
+      </div>
+      <div class="container--dib200">
+        inline-block 2 with 200px width and height
+      </div>
+      <div class="container--dib400">
+        inline-block 3 with 400px width and height
+      </div>
+    </div>
+    <div class="container container--Q6">
+      Q6: Difference between position relative, absolute, fixed, sticky, and
+      static?
+      <br />
+      Answer:
+      <br />
+      Position: static is the default position property. top, right, bottom,
+      left does not affect the positioning of static.
+      <br />
+      Position: relative is usually used along with position: absolute, it
+      functions similarly to position: static but can be moved by using top,
+      right, bottom, left. It can overlap with other objects on the screen.
+      <br />
+      Position: absolute makes the object itself no longer associate with other
+      objects on the webpage, and also has a default width of 0, which needs to
+      be changed to whatever you need it to be.
+      <br />
+      Position: fixed makes the object fix to a position relative to the
+      screenspace, and it'll not move when you scroll. This is useful for making
+      buttons and other functions that needs to be permanently available on the
+      screen.
+      <br />
+      Position: sticky toggles from position: static to position: fixed. It'll
+      not disappear off the screen. Which is similar to a sticky note.
+    </div>
+    <div class="container container--Q7">
+      Q7. Difference between visibility: hidden, and display: none?
+      <br />
+      visibility: hidden will make an empty render of the space that the object
+      takes, but it is still there and can be interacted. For example, even if
+      you make a button that links to a webpage disappear with visibility:
+      hidden, you can still slick in that space and it'll still do what it's
+      supposed to do.
+      <br />
+      display: none essentially removes the code that you wrote for that div.
+    </div>
+    <div class="container container--Q8">
+      Q8. How to build a triangle in CSS?
+      <br />
+      Answer: A simple way to make traingle is to use box-sizing: border-box.
+      and then make the content have 0 width and height. This'll make the box
+      get divided to 4 borders, which can make a triangle shape.
+      <br />
+      There is another way to make more advanced shapes by making a block of
+      object and rotating it.
+    </div>
+    <div class="df--container">
+      <div class="container--triangle"></div>
+    </div>
+    <div class="container container--Q9">
+      Q9. What are pseudo elements in CSS?
+      <br />
+      Answer: A pseudo element is used to give your element special effects. such as p::after or p::before. These are also called pseudo-class.
+    </div>
+    <div class="container container--Q10">
+        Q10. What are data attributes?
+        <br />
+        Answer: They are used to store data in HTML.
+    </div>
+    <div data-emoji="😊"></div>
+  </body>
+</html>
